@@ -1,9 +1,4 @@
 $(document).ready(function(){
-
-    if (navigator.appVersion.indexOf("Mac")!=-1) $("html").addClass("mac-os");
-
-
-
     $(".more-mobile").click(function(){
         $("#more-block").show().css({"z-index": "20"});
     });
@@ -71,13 +66,12 @@ $(document).ready(function(){
     //$(".car-slider").bxSlider();
 
     $(".rent-car-btn").click(function () {
-        $("body").addClass("scroll-disable scroll-disable-indent");
-        //$(".popup-cover-wrap").show().css({"top": $(window).scrollTop()});
-        $(".popup-cover-wrap").show();
+        $("body").addClass("scroll-disable");
+        $(".popup-cover-wrap").show().css({"top": $(window).scrollTop()});
     });
     $(".rent-car-form-close-btn-wrap").click(function () {
         $(".popup-cover-wrap").hide();
-        $("body").removeClass("scroll-disable scroll-disable-indent");
+        $("body").removeClass("scroll-disable");
     });
 
     $(".aside-nav-el-submenu.aside-nav-el-submenu-opened-state").mCustomScrollbar({
@@ -100,9 +94,9 @@ $(document).ready(function(){
     $(".routes-table-scroll-wrap").mCustomScrollbar({
         axis:"x"
     });
-    //$(".routes-table-body").mCustomScrollbar({
-    //    axis: "y"
-    //});
+    $(".routes-table-body").mCustomScrollbar({
+        axis: "y"
+    });
 
     $(".reviews-form__rating-wrap").find('.rating').barrating({
         theme: 'fontawesome-stars-o',
@@ -112,38 +106,27 @@ $(document).ready(function(){
 
     $(".widget-price").priceTabsWidget();
 
-    if($(window).width() <= 560){
-        var stepHtml;
-        $(".with-second-level .with-submenu").on('click', function () {
-                var step = $(this).parent().parent().find(".more-mobile-main-step"),
-                    text = $(this).find(">.header-nav-submenu-el__link").text(),
-                    that = $(this);
-
-                stepHtml = step.html();
-                step.html('<i class="fa fa-chevron-left" aria-hidden="true"></i> '+text);
-                $(this).parent().addClass("hide-mob-submenu");
-                $(this).find(".header-nav-submenu").addClass("mob-submenu-indent");
-
-                step.on('click', function () {
-                    $(this).html(stepHtml);
-                    that.parent().removeClass("hide-mob-submenu");
-                    that.find(".header-nav-submenu").removeClass("mob-submenu-indent");
-                });
-
-            })
-            .find(".header-nav-submenu-el__link").on('click', function (e) {e.preventDefault();});
+    if($(window).width() <= 440){
+        $(".with-second-level .with-submenu").hover(function () {
+            $(this).parent().addClass("hide-mob-submenu");
+            $(this).find(".header-nav-submenu").addClass("mob-submenu-indent");
+        },function () {
+            $(this).parent().removeClass("hide-mob-submenu");
+            $(this).find(".header-nav-submenu").removeClass("mob-submenu-indent");
+        });
     }
-
 });
 
-$(window).load(function(){
 
+
+
+$(window).load(function(){
     if($(window).width() <= 560){
-        //var logo = $(".header__logo"),
-        //    src = logo.attr("src").split("/");
-        //src.splice(-1,1, "logo-mobile.png");
-        //src = src.join("/");
-        //logo.attr("src",src);
+        var logo = $(".header__logo"),
+            src = logo.attr("src").split("/");
+        src.splice(-1,1, "logo-mobile.png");
+        src = src.join("/");
+        logo.attr("src",src);
     }
 
     if($(window).width() <= 720){
@@ -204,9 +187,7 @@ $(window).load(function(){
             parent.find(".tabs-titles__el-mobile-text").text(el.text());
             parent.find(".tabs-titles__el:not(.tabs-titles__el-mobile-selected)").hide();
         });
-        if($(".widget-price .tabs-titles__el:not(.tabs-titles__el-mobile-selected)").length){
-            $(".widget-price .tabs-titles__el:not(.tabs-titles__el-mobile-selected)")[0].click();
-        }
+        $(".widget-price .tabs-titles__el:not(.tabs-titles__el-mobile-selected)")[0].click();
     }
 });
 

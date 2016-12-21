@@ -23,31 +23,27 @@ var ActionAutoWidget = function(){
     };
 
     var setOpenedState = function(widgetContainer){
-        var promise = http("assets/json/car.json");
-
-        widgetContainer.find(".widget-action-auto-tmpl-for-list-state").hide();
+        var promise = http("assets/templates/limbery/json/car.json");
+        widgetContainer
+            .removeClass("widget-action-auto-state-list")
+            .addClass("widget-action-auto-state-opened widget_border_radius_b")
+            .find(".widget-action-auto-tmpl-for-list-state").hide();
 
         promise.success(function(data){
             parseTmpl(widgetContainer,data);
         });
 
         widgetContainer
-            .find(".widget-action-auto-tmpl-for-open-state").slideDown(1000,function(){
-            widgetContainer
-                .removeClass("widget-action-auto-state-list")
-                .addClass("widget-action-auto-state-opened widget_border_radius_b");
-        });
+            .find(".widget-action-auto-tmpl-for-open-state").show();
     };
 
     var setListState = function(widgetContainer){
-        widgetContainer.find(".widget-action-auto-tmpl-for-open-state").hide();
+        widgetContainer
+            .removeClass("widget-action-auto-state-opened widget_border_radius_b")
+            .addClass("widget-action-auto-state-list")
+            .find(".widget-action-auto-tmpl-for-open-state").hide();
 
-        widgetContainer.find(".widget-action-auto-tmpl-for-list-state").slideDown(1000, function () {
-            widgetContainer
-                .removeClass("widget-action-auto-state-opened widget_border_radius_b")
-                .addClass("widget-action-auto-state-list")
-                .find(".widget-action-auto-tmpl-for-open-state").hide();
-        });
+        widgetContainer.find(".widget-action-auto-tmpl-for-list-state").show();
         cleanOutTmpl(widgetContainer);
     };
 
@@ -97,12 +93,13 @@ function findParent(el){
     }
 }
 
-function http(url, data){
+function http(url, data, before){
     var params = {
         url: url,
         dataType: 'json'
     };
     if(data) params.data = data;
+	if(before) params.beforeSend = before;
 
     return $.ajax(params);
 }

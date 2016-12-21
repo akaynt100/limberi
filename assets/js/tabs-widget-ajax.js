@@ -1,5 +1,5 @@
 var TabsAjax = function(el){
-    var url = "assets/json/cars.json",
+    var url = $("#subcat_sort_params").attr("ajax_url"),
         tabs = el.find("[data-category]"),
         container = el.find(".tabs-container"),
         self = this,
@@ -24,13 +24,27 @@ var TabsAjax = function(el){
 
     var tabClick = function (e) {
         var el = $(this),
-            param = el.data("category"),
-            promise = http(url,param);
-
+			sort_params_id = $("#subcat_sort_params"),
+			pr = sort_params_id.attr("parent"),
+			sortby = sort_params_id.attr("sortby"),
+			sortdir = sort_params_id.attr("sortdir"),
+            param = el.data("category");
+		var dann =  "&parent="+pr+"&group="+param+"&sortby="+sortby+"&sortdir="+sortdir,
+			beforeSend = function(){
+				$(".spinner").show();
+			};
+			
+		/*dann.data="&parent="+pr+"&group="+param+"&sortby="+sortby+"&sortdir="+sortdir;
+		dann.beforeSend = function(){
+			$(".spinner").show();
+		};*/
+        var promise = http(url,dann,beforeSend);
+		
         promise.success(function(data){
             cleanContainer();
             tabs.removeClass("tabs-titles__el_active");
             el.addClass("tabs-titles__el_active");
+			$(".spinner").hide();
             data.forEach(function (item,i) {
                 createElems(item);
             });
@@ -56,7 +70,8 @@ var TabsAjax = function(el){
     var createElems = function (data) {
         var widget = container.find(".tmpl-for-cloning").clone().removeClass('tmpl-for-cloning').appendTo(container);
 
-        widget.find(".auto__image").attr({"src": data.image , "data-lg-img": data.image});
+        widget.find("a.widget-content").attr({"href": data.url});
+		widget.find(".auto__image").attr({"src": data.image , "data-lg-img": data.image});
         widget.find(".auto__title").text(data.title);
         widget.find(".rating-wrap-async").attr("data-rating-value",data.rating);
         widget.find(".rating__value-text").text(data.rating);
