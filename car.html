@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Limberi</title>
+    <!--<base href="http://new.limberi.by/build/">-->
+    <!--<meta name="viewport" content="width=1024">-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/modifiers.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+
+    <!--[if IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+<div class="wrapper grey_theme">
+    <div class="wrapper-inner grey_theme">
+        <div class="to-top-block transition_05s">
+            <div class="to-top-btn inline">
+                <span class="to-top-text">Наверх</span><i class="fa fa-chevron-up to-top-arrow to-top-arrow_indent" aria-hidden="true"></i>
+            </div>
+        </div>
+        <header class="header purple_theme">
+            <div class="header-wrap basic_width clearfix_">
+                <div class="header-logo-wrap">
+                    <img src="assets/images/logo.png" class="header__logo" alt="" title="">
+                </div>
+                <nav class="header-nav header-nav_indent_l header-nav-list_indent_r">
+                    <ul class="header-nav-list clearfix_">
+                        <li class="header-nav-list-el"><a href="#" class="header-nav-list-el__link">Главная</a></li>
+                        <li class="header-nav-list-el with-submenu">
+                            <a href="#" class="header-nav-list-el__link">Авто<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                            <ul class="header-nav-submenu">
+                                <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Лимузины</a></li>
+                                <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Легковые</a></li>
+                                <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Микроавтобусы</a></li>
+                                <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Автобусы</a></li>
+                                <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Джипы</a></li>
+                                <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Ретро, кабрио</a></li>
+                            </ul>
+                        </li>
+                        <li class="header-nav-list-el header-nav-list_indent_without_submenu"><a href="#" class="header-nav-list-el__link">Цены</a></li>
+                        <li class="header-nav-list-el"><a href="#" class="header-nav-list-el__link">Контакты</a></li>
+                        <li class="header-nav-list-el with-submenu more-mobile">
+                            <a href="#" class="header-nav-list-el__link header-nav-list-el__desktop-btn">Еще<i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                            <span class="header-nav-list-el__mobile-btn" id="header-nav-list-el__mobile-btn"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                            <div class="header-nav-submenu more" id="more-block">
+                                <div class="mobile-nav-close-btn" id="mobile-nav-close-btn">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </div>
+                                <div class="more-mobile-main-step more-phone">
+
+                                    <a href="tel: +375291387777"><i class="fa fa-phone" aria-hidden="true"></i>+ 375 29 138 77 77</a>
+
+                                    <!--<i class="fa fa-chevron-left" aria-hidden="true"></i> Родитель-->
+                                </div>
+                                <ul class="header-nav-submenu-list with-second-level transition_05s">
+                                    <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link"><i class="fa fa-balance-scale" aria-hidden="true"></i>Услуги</a></li>
+                                    <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i>Акции</a></li>
+                                    <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link"><i class="fa fa-arrows-alt" aria-hidden="true"></i>Отзывы</a></li>
+                                    <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link"><i class="fa fa-university" aria-hidden="true"></i>Маршруты</a></li>
+                                    <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link"><i class="fa fa-arrows-alt" aria-hidden="true"></i>Новости</a></li>
+                                    <li class="header-nav-submenu-el with-submenu">
+                                        <a href="#" class="header-nav-submenu-el__link"><i class="fa fa-arrows-alt" aria-hidden="true"></i>Украшения</a>
+                                        <ul class="header-nav-submenu more-submenu transition_05s">
+                                            <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Услуги1</a></li>
+                                            <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Акции1</a></li>
+                                            <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Отзывы1</a></li>
+                                            <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Маршруты1</a></li>
+                                            <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Новости1</a></li>
+                                            <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Украшения1</a></li>
+                                            <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Экскурсии1</a></li>
+                                            <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">Полезное1</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link"><i class="fa fa-arrows-alt" aria-hidden="true"></i>Экскурсии</a></li>
+                                    <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link"><i class="fa fa-arrows-alt" aria-hidden="true"></i>Полезное</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header-contacts with-submenu">
+                    <a href="tel: +375291387777">+375 29 138 77 77</a><i class="fa fa-chevron-down" aria-hidden="true"></i>
+                    <ul class="header-nav-submenu">
+                        <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">+375 29 638 77 77<span class="header-contacts__operator">velcom</span></a></li>
+                        <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">+375 33 638 77 77<span class="header-contacts__operator">life :)</span></a></li>
+                        <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">+375 25 638 77 77<span class="header-contacts__operator">mts</span></a></li>
+                        <li class="header-nav-submenu-el"><a href="#" class="header-nav-submenu-el__link">+375 17 2 8888 55<span class="header-contacts__operator">городской</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    <div class="breadcrumbs-element main-content_indent_under_header basic_width clearfix_">
+        <ul class="breadcrumbs uk-breadcrumb float_r">
+            <li class="breadcrumbs-el"><a href="" class="breadcrumbs-el__link">Главная</a></li>
+            <li class="breadcrumbs-el"><a href="" class="breadcrumbs-el__link">Новости</a></li>
+            <li class="breadcrumbs-el"><span>Ученые обнаружили</span></li>
+        </ul>
+    </div>
+    <div class="main-content main-content_indent_b main-content_indent_under_header main-content_indent_under_breadcrumbs basic_width clearfix_">
+        <aside class="aside-nav float_l aside_breadcrumbs_indent">
+            <ul class="aside-nav-list ">
+                <li class="aside-nav-el">
+                    <a href="#" class="aside-nav-el__link clearfix_">
+                        Авто
+                    </a>
+                    <ul class="aside-nav-el-submenu aside-nav-el-submenu-opened-state aside-nav-custom-scroll" >
+                        <li class="aside-nav-el ">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Лимузины
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Легковые
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Микроавтобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Автобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Джипы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Ретро, кабрио
+                            </a>
+                        </li>
+                        <li class="aside-nav-el ">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Лимузины
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Легковые
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Микроавтобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Автобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Джипы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Ретро, кабрио
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Легковые
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Микроавтобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Автобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Джипы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Ретро, кабрио
+                            </a>
+                        </li>
+
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Легковые
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Микроавтобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Автобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Джипы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Ретро, кабрио
+                            </a>
+                        </li>
+
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Легковые
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Микроавтобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Автобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Джипы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Ретро, кабрио
+                            </a>
+                        </li>
+
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Легковые
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Микроавтобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Автобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Джипы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Ретро, кабрио
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="aside-nav-list ">
+                <li class="aside-nav-el aside-nav-el-with-submenu">
+                    <a href="#" class="aside-nav-el__link clearfix_">
+                        <div class="fa-icon-wrap"><i class="fa fa-car" aria-hidden="true"></i></div>
+                        Авто
+                        <i class="fa fa-chevron-down float_r auto-drop-arrow transition_05s" aria-hidden="true"></i>
+                    </a>
+                    <ul class="aside-nav-el-submenu transition_1s">
+                        <li class="aside-nav-el ">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Лимузины
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Легковые
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Микроавтобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Автобусы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Джипы
+                            </a>
+                        </li>
+                        <li class="aside-nav-el">
+                            <a href="#" class="aside-nav-el__link aside-nav-submenu-el_padding_l">
+                                Ретро, кабрио
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="aside-nav-el">
+                    <a href="#" class="aside-nav-el__link">
+                        <div class="fa-icon-wrap"><i class="fa fa-usd" aria-hidden="true"></i></div>
+                        Цены
+                    </a>
+                </li>
+                <li class="aside-nav-el">
+                    <a href="#" class="aside-nav-el__link">
+                        <div class="fa-icon-wrap"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                        Контакты
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <div class="main-content-wrap float_r clearfix_">
+            <div class="car-slider-wrap" data-uk-slideshow="{animation: 'Swipe',autoplay:false, kenburns:true}">
+                <ul class="uk-slideshow clearfix_">
+                    <li class="car-slider-el">
+                        <img src="assets/images/car-slider.jpg" class="car-slider-el__image" alt="" title="">
+                    </li>
+                    <li class="car-slider-el">
+                        <img src="assets/images/car-slider.jpg" class="car-slider-el__image" alt="" title="">
+                    </li>
+                    <li class="car-slider-el">
+                        <img src="assets/images/car-slider.jpg" class="car-slider-el__image" alt="" title="">
+                    </li>
+                </ul>
+                <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
+                    <li data-uk-slideshow-item="0"><a href=""></a></li>
+                    <li data-uk-slideshow-item="1"><a href=""></a></li>
+                    <li data-uk-slideshow-item="2"><a href=""></a></li>
+                </ul>
+                <div class="car-slider-price-and-back-btn clearfix_">
+                    <a href="#" class="car-slider__back-btn float_l">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    </a>
+                    <div class="car-slider__price float_r">
+                        20 мест / 90 $
+                    </div>
+                </div>
+                <div class="car-slider-title-wrap">
+                    <h1 class="car-slider__title">
+                        Cadillac Escalade Versace
+                    </h1>
+                </div>
+                <div class="rent-car-btn rent-car-btn_bottom_left">+</div>
+            </div>
+            <div class="main-content main-content_indent_b clearfix_">
+                <div class="vertical-row vertical-row-left">
+                    <section class="widget widget-container widget-auto-characteristics widget-sm">
+                        <div class="widget-content widget-auto-characteristics-wrap widget_indent_v_15">
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    TV для пассажира
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 20.1794%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    да
+                                </div>
+                            </div>
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    Кондиционер
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 34.5291%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    да
+                                </div>
+                            </div>
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    Количество мест
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 25.1121%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    20
+                                </div>
+                            </div>
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    Тип топлива
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 26.009%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    дизель
+                                </div>
+                            </div>
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    Объем двигателя
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 17.9372%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    20 л
+                                </div>
+                            </div>
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    Хорошая акустика
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 17.4888%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    нет
+                                </div>
+                            </div>
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    Дожимы стекол
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 27.8027%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    да
+                                </div>
+                            </div>
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    Дожимы дверей
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 26.4574%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    да
+                                </div>
+                            </div>
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    Кожаный салон
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 27.8027%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    да
+                                </div>
+                            </div>
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    Микрофон
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 42.6009%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    да
+                                </div>
+                            </div>
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    Люк
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 61.8834%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    да
+                                </div>
+                            </div>
+                            <div class="widget-auto-characteristics-el clearfix_">
+                                <div class="auto-characteristics-el__title float_l">
+                                    <div class="fa-icon-wrap"><i class="fa fa-television" aria-hidden="true"></i></div>
+                                    Литые диски
+                                </div>
+                                <div class="auto-characteristics-el__divider float_l" style="width: 36.7713%;">
+
+                                </div>
+                                <div class="auto-characteristics-el__value float_r">
+                                    да
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="widget widget-container widget-car-price widget-text-block widget-sm widget_indent_h_15 widget_margin_t">
+                        <div class="widget-header widget-el widget-car-price-header">
+                            Стоимость аренды лимузина Cadillac Escalade
+                        </div>
+                        <div class="widget-content widget-el">
+                            <div class="car-price-table">
+                                <div class="car-price-table-head clearfix_">
+                                    <div class="car-price-table-el car-price-table-head-el">
+                                        4 ч +
+                                    </div>
+                                    <div class="car-price-table-el car-price-table-head-el">
+                                        3 ч
+                                    </div>
+                                    <div class="car-price-table-el car-price-table-head-el">
+                                        2 ч
+                                    </div>
+                                    <div class="car-price-table-el car-price-table-head-el">
+                                        1 ч
+                                    </div>
+                                </div>
+                                <div class="car-price-table-body clearfix_">
+                                    <div class="car-price-table-el">
+                                        90
+                                    </div>
+                                    <div class="car-price-table-el">
+                                        95
+                                    </div>
+                                    <div class="car-price-table-el">
+                                        100
+                                    </div>
+                                    <div class="car-price-table-el">
+                                        110
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Шикарный автомобиль является неотъемлемой частью любого торжества, а также служит показателем успешности делового человека. Аренда Мерседес W-222 черного цвета с водителем в Минске одинаково подойдет как для почасовых поездок при работе на мероприятиях</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="vertical-row vertical-row-right clearfix_">
+                    <section class="widget widget-container widget-car-price widget-text-block widget-lg widget_indent_h_15">
+                        <div class="widget-header widget-el widget-car-price-header">
+                            Стоимость аренды лимузина Cadillac Escalade Versace
+                        </div>
+                        <div class="widget-content widget-el">
+                            <div class="car-price-table">
+                                <div class="car-price-table-head clearfix_">
+                                    <div class="car-price-table-el car-price-table-head-el">
+                                        4 ч +
+                                    </div>
+                                    <div class="car-price-table-el car-price-table-head-el">
+                                        3 ч
+                                    </div>
+                                    <div class="car-price-table-el car-price-table-head-el">
+                                        2 ч
+                                    </div>
+                                    <div class="car-price-table-el car-price-table-head-el">
+                                        1 ч
+                                    </div>
+                                </div>
+                                <div class="car-price-table-body clearfix_">
+                                    <div class="car-price-table-el">
+                                        90
+                                    </div>
+                                    <div class="car-price-table-el">
+                                        95
+                                    </div>
+                                    <div class="car-price-table-el">
+                                        100
+                                    </div>
+                                    <div class="car-price-table-el">
+                                        110
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Шикарный автомобиль является неотъемлемой частью любого торжества, а также служит показателем успешности делового человека. Аренда Мерседес W-222 черного цвета с водителем в Минске одинаково подойдет как для почасовых поездок при работе на мероприятиях, так и для постоянного индивидуальнmtого обслуживания. Долгосрочный прокат Мерседес W-222 в Минске предполагает специальные предложения и скидки. Краткосрочная аренда легкового автомобиля возможна от трех полных часов. Удлиненный вариант этого супер-седана можно без зазрения</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="popup-cover-wrap">
+            <section class="widget widget-container widget-discount widget-rent-car widget-sm">
+                <div class="widget-content widget_indent_v_15 clearfix_">
+                    <div class="rent-car-form-title-and-name">
+                        <div class="rent-car-form__title">
+                            Заказ авто
+                        </div>
+                        <div class="rent-car-form__name">
+                            Cadillac Escalade
+                        </div>
+                    </div>
+                    <form action="" method="post" class="widget-discount-form widget_indent_h_15">
+                        <label class="form-label discount-form-label">
+                                <span class="discount-form-label__title">
+                                    Номер телефона
+                                </span>
+                            <input type="text" placeholder="+375 " value="+375 " class="discount-form__input discount-form__input_border_b reset_useragent_input_style">
+                        </label>
+                        <label class="form-label btn-wrapper discount-form-btn-wrapper">
+                            <input type="submit" class="btn submit-btn btn_orange_theme_invert reset_useragent_input_style transition_05s">
+                        </label>
+                    </form>
+                    <div class="rent-car-form-close-btn-wrap">
+                        <img src="assets/images/pop-up-close.png" class="rent-car-form-close__btn" alt="">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<footer class="footer purple_theme">
+    <div class="footer-top max_basic_width clearfix_">
+        <div class="footer-links footer-cars-links float_l">
+            <a href="#" class="footer-links-list__title clearfix_">Авто<i class="fa fa-chevron-down float_r" aria-hidden="true"></i></a>
+            <ul class="footer-links-list">
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link">Лимузины</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link">Легковые</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link">Микроавтобусы</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link">Автобусы</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link">Джипы</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link">Ретро, кабрио</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-links footer-more-links float_l">
+            <ul class="footer-links-list">
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link"><i class="fa fa-balance-scale" aria-hidden="true"></i>Услуги</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link"><i class="fa fa-balance-scale" aria-hidden="true"></i>Акции</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link"><i class="fa fa-balance-scale" aria-hidden="true"></i>Маршруты</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link"><i class="fa fa-balance-scale" aria-hidden="true"></i>Новости</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link"><i class="fa fa-balance-scale" aria-hidden="true"></i>Отзывы</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link"><i class="fa fa-balance-scale" aria-hidden="true"></i>Украшения</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link"><i class="fa fa-balance-scale" aria-hidden="true"></i>Экскурсии</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link"><i class="fa fa-balance-scale" aria-hidden="true"></i>Полезное</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-links footer-main-links float_l">
+            <ul class="footer-links-list">
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link"><i class="fa fa-balance-scale" aria-hidden="true"></i>Цены</a>
+                </li>
+                <li class="footer-links-list-el">
+                    <a href="#" class="footer-links-list-el__link"><i class="fa fa-balance-scale" aria-hidden="true"></i>Контакты</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-address float_r">
+            <ul class="footer-links-list">
+                <li class="footer-links-list-el">
+                    ООО Лимбери
+                </li>
+                <li class="footer-links-list-el">
+                    Республика Беларусь
+                </li>
+                <li class="footer-links-list-el">
+                    г. Минск
+                </li>
+                <li class="footer-links-list-el">
+                    Сморговский тракт, 57
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom footer-social-links basic_width">
+        <a href="#" class="footer-social__link">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="footer-social__link">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="footer-social__link">
+            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="footer-social__link">
+            <i class="fa fa-vk" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="footer-social__link">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="footer-social__link">
+            <i class="fa fa-youtube" aria-hidden="true"></i>
+        </a>
+    </div>
+</footer>
+</div>
+<script src="assets/js/libs.js"></script>
+<script src="assets/js/action-auto-widget.js"></script>
+<script src="assets/js/rating-widget.js"></script>
+<script src="assets/js/tabs-widget.js"></script>
+<script src="assets/js/tabs-widget-ajax.js"></script>
+<script src="assets/js/price-tabs-widget.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

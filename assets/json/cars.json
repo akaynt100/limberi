@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Cadillac Escalade1",
+    "sits": 20,
+    "price": 60,
+    "rating": 4.5,
+    "reviews_count": 54,
+    "image": "assets/images/auto.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Cadillac Escalade2",
+    "sits": 20,
+    "price": 60,
+    "rating": 3.5,
+    "reviews_count": 54,
+    "image": "assets/images/auto.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Cadillac Escalade3",
+    "sits": 20,
+    "price": 60,
+    "rating": 5,
+    "reviews_count": 54,
+    "image": "assets/images/auto.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Cadillac Escalade4",
+    "sits": 20,
+    "price": 60,
+    "rating": 2,
+    "reviews_count": 54,
+    "image": "assets/images/auto.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Cadillac Escalade5",
+    "sits": 20,
+    "price": 60,
+    "rating": 4.5,
+    "reviews_count": 54,
+    "image": "assets/images/auto.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Cadillac Escalade6",
+    "sits": 20,
+    "price": 60,
+    "rating": 4,
+    "reviews_count": 54,
+    "image": "assets/images/auto.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Cadillac Escalade7",
+    "sits": 20,
+    "price": 60,
+    "rating": 1.5,
+    "reviews_count": 54,
+    "image": "assets/images/auto.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Cadillac Escalade8",
+    "sits": 20,
+    "price": 60,
+    "rating": 2.5,
+    "reviews_count": 54,
+    "image": "assets/images/auto.jpg"
+  }
+]
