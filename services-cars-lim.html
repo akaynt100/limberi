@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="assets/css/media.css">
 
     <!--[if IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script>
+        window.lazySizesConfig = window.lazySizesConfig || {};
+        window.lazySizesConfig.init = false;
+    </script>
 </head>
 <body>
 <div class="wrapper grey_theme">
@@ -26,7 +31,7 @@
         <header class="header purple_theme">
             <div class="header-wrap basic_width clearfix_">
                 <div class="header-logo-wrap">
-                    <img src="assets/images/logo.png" class="header__logo" alt="" title="">
+                    <img src="assets/images/logo.svg" class="header__logo" alt="" title="">
                 </div>
                 <nav class="header-nav header-nav_indent_l header-nav-list_indent_r">
                     <ul class="header-nav-list clearfix_">
@@ -234,28 +239,31 @@
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
                     <section class="widget widget-container widget-slider-container widget_indent_h_15 widget-lg">
-                        <div class="widget-content widget-el widget-slider-wrap" data-uk-slideshow="{animation: 'Swipe',autoplay:false, kenburns:true}">
+                        <div class="widget-content widget-el widget-slider-wrap lazy-slider">
                             <ul class="uk-slideshow clearfix_">
                                 <li class="widget-slider-el">
-                                    <img data-sizes="auto"
-                                         data-src="assets/images/service-slider.jpg"
-                                         data-srcset="assets/images/service-slider.jpg 720w,
-                                                        assets/images/action-auto-slider-img.jpg 500w"
-                                         class="widget-slider-el__image lazyload" >
+                                    <img
+                                            data-sizes="auto"
+
+                                            data-custom-srcset="assets/images/img360.jpg | 360, assets/images/img480.jpg | 480, assets/images/img900.jpg | 900"
+
+                                            class="widget-slider-el__image lazyload" alt="" title="" />
                                 </li>
                                 <li class="widget-slider-el">
-                                    <img data-sizes="auto"
-                                         data-src="assets/images/service-slider.jpg"
-                                         data-srcset="assets/images/service-slider.jpg 720w,
-                                                        assets/images/action-auto-slider-img.jpg 500w"
-                                         class="widget-slider-el__image lazyload" >
+                                    <img
+                                            data-sizes="auto"
+
+                                            data-custom-srcset="assets/images/img360.jpg | 360, assets/images/img480.jpg | 480, assets/images/img900.jpg | 900"
+
+                                            class="widget-slider-el__image lazyload" alt="" title="" />
                                 </li>
                                 <li class="widget-slider-el">
-                                    <img data-sizes="auto"
-                                         data-src="assets/images/service-slider.jpg"
-                                         data-srcset="assets/images/service-slider.jpg 720w,
-                                                        assets/images/action-auto-slider-img.jpg 500w"
-                                         class="widget-slider-el__image lazyload" >
+                                    <img
+                                            data-sizes="auto"
+
+                                            data-custom-srcset="assets/images/img360.jpg | 360, assets/images/img480.jpg | 480, assets/images/img900.jpg | 900"
+
+                                            class="widget-slider-el__image lazyload" alt="" title="" />
                                 </li>
                             </ul>
                             <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
@@ -677,6 +685,7 @@
 <script src="assets/js/tabs-widget.js"></script>
 <script src="assets/js/tabs-widget-ajax.js"></script>
 <script src="assets/js/price-tabs-widget.js"></script>
+<script src="assets/js/images-replacer.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

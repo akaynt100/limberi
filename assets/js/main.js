@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+    if (navigator.appVersion.indexOf("Mac")!=-1) $("html").addClass("mac-os");
+
+
+
     $(".more-mobile").click(function(){
         $("#more-block").show().css({"z-index": "20"});
     });
@@ -66,12 +71,13 @@ $(document).ready(function(){
     //$(".car-slider").bxSlider();
 
     $(".rent-car-btn").click(function () {
-        $("body").addClass("scroll-disable");
-        $(".popup-cover-wrap").show().css({"top": $(window).scrollTop()});
+        $("body").addClass("scroll-disable scroll-disable-indent");
+        //$(".popup-cover-wrap").show().css({"top": $(window).scrollTop()});
+        $(".popup-cover-wrap").show();
     });
     $(".rent-car-form-close-btn-wrap").click(function () {
         $(".popup-cover-wrap").hide();
-        $("body").removeClass("scroll-disable");
+        $("body").removeClass("scroll-disable scroll-disable-indent");
     });
 
     $(".aside-nav-el-submenu.aside-nav-el-submenu-opened-state").mCustomScrollbar({
@@ -127,15 +133,17 @@ $(document).ready(function(){
             })
             .find(".header-nav-submenu-el__link").on('click', function (e) {e.preventDefault();});
     }
+
 });
 
 $(window).load(function(){
+
     if($(window).width() <= 560){
-        var logo = $(".header__logo"),
-            src = logo.attr("src").split("/");
-        src.splice(-1,1, "logo-mobile.png");
-        src = src.join("/");
-        logo.attr("src",src);
+        //var logo = $(".header__logo"),
+        //    src = logo.attr("src").split("/");
+        //src.splice(-1,1, "logo-mobile.png");
+        //src = src.join("/");
+        //logo.attr("src",src);
     }
 
     if($(window).width() <= 720){
@@ -196,7 +204,9 @@ $(window).load(function(){
             parent.find(".tabs-titles__el-mobile-text").text(el.text());
             parent.find(".tabs-titles__el:not(.tabs-titles__el-mobile-selected)").hide();
         });
-        $(".widget-price .tabs-titles__el:not(.tabs-titles__el-mobile-selected)")[0].click();
+        if($(".widget-price .tabs-titles__el:not(.tabs-titles__el-mobile-selected)").length){
+            $(".widget-price .tabs-titles__el:not(.tabs-titles__el-mobile-selected)")[0].click();
+        }
     }
 });
 

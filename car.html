@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="assets/css/media.css">
 
     <!--[if IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script>
+        window.lazySizesConfig = window.lazySizesConfig || {};
+        window.lazySizesConfig.init = false;
+    </script>
 </head>
 <body>
 <div class="wrapper grey_theme">
@@ -26,7 +31,7 @@
         <header class="header purple_theme">
             <div class="header-wrap basic_width clearfix_">
                 <div class="header-logo-wrap">
-                    <img src="assets/images/logo.png" class="header__logo" alt="" title="">
+                    <img src="assets/images/logo.svg" class="header__logo" alt="" title="">
                 </div>
                 <nav class="header-nav header-nav_indent_l header-nav-list_indent_r">
                     <ul class="header-nav-list clearfix_">
@@ -331,22 +336,28 @@
             </ul>
         </aside>
         <div class="main-content-wrap float_r clearfix_">
-            <div class="car-slider-wrap" data-uk-slideshow="{animation: 'Swipe',autoplay:false, kenburns:true}">
+            <div class="car-slider-wrap lazy-slider">
                 <ul class="uk-slideshow clearfix_">
                     <li class="car-slider-el">
-                        <img src="assets/images/car-slider.jpg" class="car-slider-el__image" alt="" title="">
+                        <img
+                                data-sizes="auto"
+
+                                data-custom-srcset="assets/images/img360.jpg | 360, assets/images/img480.jpg | 480, assets/images/img900.jpg | 900"
+
+                                class="car-slider-el__image lazyload" alt="" title="" />
                     </li>
                     <li class="car-slider-el">
-                        <img src="assets/images/car-slider.jpg" class="car-slider-el__image" alt="" title="">
-                    </li>
-                    <li class="car-slider-el">
-                        <img src="assets/images/car-slider.jpg" class="car-slider-el__image" alt="" title="">
+                        <img
+                                data-sizes="auto"
+
+                                data-custom-srcset="assets/images/img360.jpg | 360, assets/images/img480.jpg | 480, assets/images/img900.jpg | 900"
+
+                                class="car-slider-el__image lazyload" alt="" title="" />
                     </li>
                 </ul>
                 <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
                     <li data-uk-slideshow-item="0"><a href=""></a></li>
                     <li data-uk-slideshow-item="1"><a href=""></a></li>
-                    <li data-uk-slideshow-item="2"><a href=""></a></li>
                 </ul>
                 <div class="car-slider-price-and-back-btn clearfix_">
                     <a href="#" class="car-slider__back-btn float_l">
@@ -732,6 +743,7 @@
 <script src="assets/js/tabs-widget.js"></script>
 <script src="assets/js/tabs-widget-ajax.js"></script>
 <script src="assets/js/price-tabs-widget.js"></script>
+<script src="assets/js/images-replacer.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

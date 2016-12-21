@@ -24,26 +24,30 @@ var ActionAutoWidget = function(){
 
     var setOpenedState = function(widgetContainer){
         var promise = http("assets/json/car.json");
-        widgetContainer
-            .removeClass("widget-action-auto-state-list")
-            .addClass("widget-action-auto-state-opened widget_border_radius_b")
-            .find(".widget-action-auto-tmpl-for-list-state").hide();
+
+        widgetContainer.find(".widget-action-auto-tmpl-for-list-state").hide();
 
         promise.success(function(data){
             parseTmpl(widgetContainer,data);
         });
 
         widgetContainer
-            .find(".widget-action-auto-tmpl-for-open-state").show();
+            .find(".widget-action-auto-tmpl-for-open-state").slideDown(1000,function(){
+            widgetContainer
+                .removeClass("widget-action-auto-state-list")
+                .addClass("widget-action-auto-state-opened widget_border_radius_b");
+        });
     };
 
     var setListState = function(widgetContainer){
-        widgetContainer
-            .removeClass("widget-action-auto-state-opened widget_border_radius_b")
-            .addClass("widget-action-auto-state-list")
-            .find(".widget-action-auto-tmpl-for-open-state").hide();
+        widgetContainer.find(".widget-action-auto-tmpl-for-open-state").hide();
 
-        widgetContainer.find(".widget-action-auto-tmpl-for-list-state").show();
+        widgetContainer.find(".widget-action-auto-tmpl-for-list-state").slideDown(1000, function () {
+            widgetContainer
+                .removeClass("widget-action-auto-state-opened widget_border_radius_b")
+                .addClass("widget-action-auto-state-list")
+                .find(".widget-action-auto-tmpl-for-open-state").hide();
+        });
         cleanOutTmpl(widgetContainer);
     };
 
