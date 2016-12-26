@@ -104,6 +104,8 @@ $(document).ready(function(){
     //    axis: "y"
     //});
 
+    $('.excursion_filters .filter-dropdown-scroll').mCustomScrollbar({theme:"minimal-dark"});
+
     $(".reviews-form__rating-wrap").find('.rating').barrating({
         theme: 'fontawesome-stars-o',
         initialRating: "0",
@@ -133,8 +135,12 @@ $(document).ready(function(){
             })
             .find(".header-nav-submenu-el__link").on('click', function (e) {e.preventDefault();});
     }
+    liveSearchExcursions();
 
+    cropStrings(['.aside-nav-custom-scroll .aside-nav-el__link','.widget-news .auto__title'], [10,22]);
+    cropReviewsText();
 });
+
 
 $(window).load(function(){
 
@@ -269,6 +275,68 @@ function toTopInit(){
         }else{
             $("html, body").animate({scrollTop: scroll}, 500);
             scroll = false;
+        }
+    });
+}
+
+function liveSearchExcursions(){
+    var els = $('.live__search-header');
+
+    els.on('click', function () {
+        var el = $(this),
+            textField = el.find('.live__search-header-content'),
+            inputField = el.find('.live__search-field');
+
+        el.addClass('live__search-active');
+        textField.hide();
+        inputField.show().focus()
+            .on('change', function () {
+
+            })
+            .on('focusout', function () {
+                textField.text($(this).val()).show();
+                $(this).hide();
+                el.removeClass('live__search-active');
+            });
+
+    });
+
+}
+
+function cropStrings(arr,length){
+    arr.forEach(function (item,i) {
+        var els = $(item);
+        if(els.length){
+            els.each(function () {
+                var el = $(this),
+                    text = el.text().trim(),
+                    cropedText;
+                (text.length > length[i]) ? cropedText = text.substring(0,parseInt(length[i]))+'...' : cropedText = text;
+                el.text(cropedText);
+            });
+        }
+    });
+}
+
+function cropReviewsText(){
+    var els = $('.widget-reviews-list .reviews-slider-el-content'),
+        CROPED_TEXT_LENGTH = 250;
+
+    els.each(function () {
+        var el = $(this),
+            review = el.find('.reviews-slider-el__text'),
+            reviewText = review.text(),
+            moreBtn = el.find('.reviews-slider-el__more');
+
+        if(reviewText.length > CROPED_TEXT_LENGTH){
+            review.text(
+                reviewText.substring(0, CROPED_TEXT_LENGTH)+'...'
+            );
+            moreBtn.addClass('show').on('click', function (e) {
+                review.text(reviewText);
+                $(this).removeClass('show').hide();
+                e.preventDefault();
+            });
         }
     });
 }
