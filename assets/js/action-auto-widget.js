@@ -32,22 +32,20 @@ var ActionAutoWidget = function(){
         });
 
         widgetContainer
-            .find(".widget-action-auto-tmpl-for-open-state").slideDown(1000,function(){
-            widgetContainer
-                .removeClass("widget-action-auto-state-list")
-                .addClass("widget-action-auto-state-opened widget_border_radius_b");
-        });
+            .find(".widget-action-auto-tmpl-for-open-state").show();
+        widgetContainer
+            .removeClass("widget-action-auto-state-list")
+            .addClass("widget-action-auto-state-opened widget_border_radius_b");
     };
 
     var setListState = function(widgetContainer){
         widgetContainer.find(".widget-action-auto-tmpl-for-open-state").hide();
 
-        widgetContainer.find(".widget-action-auto-tmpl-for-list-state").slideDown(1000, function () {
-            widgetContainer
-                .removeClass("widget-action-auto-state-opened widget_border_radius_b")
-                .addClass("widget-action-auto-state-list")
-                .find(".widget-action-auto-tmpl-for-open-state").hide();
-        });
+        widgetContainer.find(".widget-action-auto-tmpl-for-list-state").show();
+        widgetContainer
+            .removeClass("widget-action-auto-state-opened widget_border_radius_b")
+            .addClass("widget-action-auto-state-list")
+            .find(".widget-action-auto-tmpl-for-open-state").hide();
         cleanOutTmpl(widgetContainer);
     };
 

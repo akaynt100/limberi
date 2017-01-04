@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     if (navigator.appVersion.indexOf("Mac")!=-1) $("html").addClass("mac-os");
-
+    if (navigator.userAgent.search(/Firefox/) > -1) $("html").addClass("ff-browser");
 
 
     $(".more-mobile").click(function(){
@@ -137,8 +137,24 @@ $(document).ready(function(){
     }
     liveSearchExcursions();
 
-    cropStrings(['.aside-nav-custom-scroll .aside-nav-el__link','.widget-news .auto__title'], [10,22]);
+    cropStrings(['.aside-nav-custom-scroll .aside-nav-el__link','.widget-news .auto__title'], [17,22]);
+
     cropReviewsText();
+
+    if($(window).width() <= 840 && $(window).width()>= 768){
+        //cropStrings(['.widget-auto:not(.tmpl-for-cloning) .auto__title'], [1]);
+    }
+
+    $('.footer-links-list__title').on('click', function (e) {
+        $(this).parent().find('.footer-links-with-wubmenu').toggleClass('footer-links-closed-state');
+        e.preventDefault();
+    });
+
+
+    document.addEventListener("carsLoaded", function(event) {
+        cropStrings(['.widget-auto .auto__title'], [20]);
+    }, false);
+
 });
 
 
@@ -280,7 +296,7 @@ function toTopInit(){
 }
 
 function liveSearchExcursions(){
-    var els = $('.live__search-header');
+    var els = $('.live__search-el');
 
     els.on('click', function () {
         var el = $(this),

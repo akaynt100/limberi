@@ -4,7 +4,8 @@ var TabsAjax = function(el){
         container = el.find(".tabs-container"),
         self = this,
         mobileBtn = $(".tabs-titles__el-mobile-selected"),
-        ratings = new RatingWidget();
+        ratings = new RatingWidget(),
+        loadEvent = new CustomEvent("carsLoaded");
 
     var init = function(){
 
@@ -36,6 +37,7 @@ var TabsAjax = function(el){
             });
             ratings.setElements($('.rating-wrap-async'));
             ratings.init();
+            document.dispatchEvent(loadEvent);
         });
 
         e.preventDefault();
@@ -71,6 +73,7 @@ var TabsAjax = function(el){
         container.find(".widget:not(.tmpl-for-cloning)").remove();
         ratings.destroy();
     };
+
 
     return init();
 
