@@ -64,7 +64,7 @@ var TabsAjax = function(el){
         widget.find(".rating__value-text").text(data.rating);
         widget.find(".rating__reviews-count").text(data.reviews_count);
         widget.find(".auto-sits-count").text(data.sits + " мест");
-        widget.find(".auto-price").text("от " + data.price +" $");
+        widget.find(".auto-price").text("от " + data.price +"BYN");
 
         return widget;
     };

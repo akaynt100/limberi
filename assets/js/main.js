@@ -152,8 +152,11 @@ $(document).ready(function(){
 
 
     document.addEventListener("carsLoaded", function(event) {
-        cropStrings(['.widget-auto .auto__title'], [20]);
+        cropStrings(['.widget-auto .auto__title'], [18]);
     }, false);
+
+
+    fixTableHead();
 
 });
 
@@ -233,6 +236,42 @@ $(window).load(function(){
 });
 
 $(window).resize(resizeGrid);
+
+function fixTableHead(){
+    var tableWidget = $('.widget-routes'),
+        tHead = tableWidget.find('.routes-table-head'),
+        tBody = $('.routes-table-body'),
+        pageHeader = $('.header'),
+        tHeadOffset = tHead.offset().top,
+        w  = $(window);
+
+
+    setBodyIndent();
+
+
+    w.scroll(function(){
+
+        var windowScroll = w.scrollTop(),
+            pageHeaderHeight = pageHeader.height();
+
+        if(windowScroll >= tHeadOffset){
+            tHead.css({
+                'top': windowScroll - tHeadOffset + pageHeaderHeight
+            });
+        }else{
+            tHead.css({
+                'top': 0
+            });
+        }
+
+    });
+
+
+    function setBodyIndent(){
+        var indent = tHead.height();
+        tBody.css({'marginTop': indent});
+    }
+}
 
 function resizeGrid(){
     if($(window).width() > 480 && $(window).width()<=720){
