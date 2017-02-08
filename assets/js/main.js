@@ -163,12 +163,18 @@ $(document).ready(function(){
 
 $(window).load(function(){
 
-    if($(window).width() <= 560){
-        //var logo = $(".header__logo"),
-        //    src = logo.attr("src").split("/");
-        //src.splice(-1,1, "logo-mobile.png");
-        //src = src.join("/");
-        //logo.attr("src",src);
+    if($(window).width() <= 768){
+        $.event.special.tap.tapholdThreshold = 500;
+
+        $('.header-nav-list > .with-submenu:not(.more-mobile)')
+            .on("tap",function(e){
+                $(this).find('.header-nav-submenu').show();
+                e.preventDefault();
+            })
+            .on("taphold",function(){
+                var url = $(this).find('>.header-nav-list-el__link').attr('href');
+                document.location.href = url;
+            });
     }
 
     if($(window).width() <= 720){
