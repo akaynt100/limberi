@@ -70,7 +70,7 @@ $(document).ready(function(){
 
     //$(".car-slider").bxSlider();
 
-    $(".rent-car-btn").click(function () {
+    $(".show-popup").click(function () {
         $("body").addClass("scroll-disable scroll-disable-indent");
         //$(".popup-cover-wrap").show().css({"top": $(window).scrollTop()});
         $(".popup-cover-wrap").show();
@@ -137,7 +137,9 @@ $(document).ready(function(){
     }
     liveSearchExcursions();
 
-    cropStrings(['.aside-nav-custom-scroll .aside-nav-el__link','.widget-news .auto__title'], [17,22]);
+    cropStrings([
+        '.aside-nav-custom-scroll .aside-nav-el__link','.auto__title'
+    ], [17,22]);
 
     cropReviewsText();
 
@@ -162,20 +164,6 @@ $(document).ready(function(){
 
 
 $(window).load(function(){
-
-    if($(window).width() <= 768){
-        $.event.special.tap.tapholdThreshold = 500;
-
-        $('.header-nav-list > .with-submenu:not(.more-mobile)')
-            .on("tap",function(e){
-                $(this).find('.header-nav-submenu').show();
-                e.preventDefault();
-            })
-            .on("taphold",function(){
-                var url = $(this).find('>.header-nav-list-el__link').attr('href');
-                document.location.href = url;
-            });
-    }
 
     if($(window).width() <= 720){
         var excSmEls = $(".widget-excursion.widget-sm"),
