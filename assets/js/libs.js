@@ -305,7 +305,7 @@ if(e=u.split("-"),h=d[u]?d[u]:d["bottom-left"],this.justified&&this.justified.le
             }
         },
 
-        resize: function() {
+        resize: function(callback) {
             if (this.container.hasClass('uk-slideshow-fullscreen')) return;
 
             var height = this.options.height;
@@ -315,12 +315,24 @@ if(e=u.split("-"),h=d[u]?d[u]:d["bottom-left"],this.justified&&this.justified.le
                 height = 0;
 
                 this.slides.css('height', '').each(function() {
-                    height = Math.max(height, UI.$(this).height());
+                    var computedHeight = UI.$(this).find('img').data('computedHeight'),
+                        _height;
+                    console.log(computedHeight);
+
+                    (computedHeight) ? _height = computedHeight : _height = UI.$(this).height();
+
+                    //height = Math.max(height, UI.$(this).height());
+
+                    height = Math.max(height, _height);
                 });
             }
 
             this.container.css('height', height);
             this.slides.css('height', height);
+
+            if(callback){
+                callback();
+            }
         },
 
         show: function(index, direction) {

@@ -52,8 +52,69 @@
             image.attr('data-src',src);
         });
 
-        callback();
+        setImageHeight();
+
+        if(callback) {
+            callback();
+        }
     };
+
+    var setImageHeight = function (callback) {
+        var images = $('[data-computed-height-set]');
+
+        images.each(function(){
+            var image = $(this),
+                hSet = image.data('computedHeightSet').split(', '),
+                windowWidth = parseInt($(window).width()),
+                max,
+                min,
+                height='';
+
+            hSet.forEach(function (item, i) {
+                var hSetCase = item.split(' | ');
+                if(hSetCase.length >2) return;
+                if(i==0){ min = hSetCase; max = hSetCase; return;}
+
+                if(parseInt(hSetCase[SRCSET_WINDOW_WIDTH_INDEX]) < parseInt(min[SRCSET_WINDOW_WIDTH_INDEX])){
+                    min = hSetCase;
+                }
+                if(parseInt(hSetCase[SRCSET_WINDOW_WIDTH_INDEX]) > parseInt(max[SRCSET_WINDOW_WIDTH_INDEX])){
+                    max = hSetCase;
+                }
+            });
+
+            if(windowWidth >= max[SRCSET_WINDOW_WIDTH_INDEX]){
+                height = max[SRCSET_PATH_INDEX];
+            }
+
+            if(windowWidth <= min[SRCSET_WINDOW_WIDTH_INDEX]){
+                height = min[SRCSET_PATH_INDEX];
+            }
+
+            if(windowWidth > min[SRCSET_WINDOW_WIDTH_INDEX] && windowWidth < max[SRCSET_WINDOW_WIDTH_INDEX]){
+                var higher = [],
+                    maxLower = ['',0],
+                    minHigher;
+
+                for(var j=0; j < hSet.length; j++){
+                    var item = hSet[j].split(' | ');
+                    if(windowWidth > item[SRCSET_WINDOW_WIDTH_INDEX]){
+                        if(item[SRCSET_WINDOW_WIDTH_INDEX] > maxLower[SRCSET_WINDOW_WIDTH_INDEX]){
+                            maxLower = item;
+                        }
+                    }
+                }
+                height = maxLower[SRCSET_PATH_INDEX];
+            }
+            image.attr('data-computed-height',height);
+        });
+
+        if(callback) {
+            callback();
+        }
+    };
+
+    window.ImageReplacer = ImageReplacer;
 
     $(window).load(function(){
         var lazySlideShow;
@@ -73,8 +134,15 @@
 
         function sliderResize(){
             setTimeout(function () {
-                lazySlideShow.resize();
+                lazySlideShow.resize(function () {
+                    $('.car-slider').removeClass('car-slider-init-position');
+                    $('.car-slider-preview').hide();
+                });
             },250);
+
+            //lazySlideShow.resize();
+            //$('.car-slider').removeClass('car-slider-init-position');
+            //$('.car-slider-preview').hide();
         }
     });
 })();

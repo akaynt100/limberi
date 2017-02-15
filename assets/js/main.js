@@ -70,10 +70,11 @@ $(document).ready(function(){
 
     //$(".car-slider").bxSlider();
 
-    $(".show-popup").click(function () {
+    $(".show-popup").click(function (e) {
         $("body").addClass("scroll-disable scroll-disable-indent");
         //$(".popup-cover-wrap").show().css({"top": $(window).scrollTop()});
         $(".popup-cover-wrap").show();
+        e.preventDefault();
     });
     $(".rent-car-form-close-btn-wrap").click(function () {
         $(".popup-cover-wrap").hide();
