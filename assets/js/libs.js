@@ -317,7 +317,6 @@ if(e=u.split("-"),h=d[u]?d[u]:d["bottom-left"],this.justified&&this.justified.le
                 this.slides.css('height', '').each(function() {
                     var computedHeight = UI.$(this).find('img').data('computedHeight'),
                         _height;
-                    console.log(computedHeight);
 
                     (computedHeight) ? _height = computedHeight : _height = UI.$(this).height();
 
@@ -1313,3 +1312,543 @@ if(e=u.split("-"),h=d[u]?d[u]:d["bottom-left"],this.justified&&this.justified.le
 return t.apply(e,arguments)}}function a(){this.onload=null,e(t).addClass(d[2]),r(2)}if(e(t).hasClass(d[2]))return void r();var n=new Image;n.onload=o(n,a),n.src=t.src}function i(){c.advanced.updateOnSelectorChange===!0&&(c.advanced.updateOnSelectorChange="*");var e=0,t=f.find(c.advanced.updateOnSelectorChange);return c.advanced.updateOnSelectorChange&&t.length>0&&t.each(function(){e+=this.offsetHeight+this.offsetWidth}),e}function r(e){clearTimeout(f[0].autoUpdate),u.update.call(null,l[0],e)}var l=e(this),s=l.data(a),c=s.opt,f=e("#mCSB_"+s.idx+"_container");return t?(clearTimeout(f[0].autoUpdate),void $(f[0],"autoUpdate")):void o()},V=function(e,t,o){return Math.round(e/t)*t-o},Q=function(t){var o=t.data(a),n=e("#mCSB_"+o.idx+"_container,#mCSB_"+o.idx+"_container_wrapper,#mCSB_"+o.idx+"_dragger_vertical,#mCSB_"+o.idx+"_dragger_horizontal");n.each(function(){Z.call(this)})},G=function(t,o,n){function i(e){return s&&c.callbacks[e]&&"function"==typeof c.callbacks[e]}function r(){return[c.callbacks.alwaysTriggerOffsets||w>=S[0]+y,c.callbacks.alwaysTriggerOffsets||-B>=w]}function l(){var e=[h[0].offsetTop,h[0].offsetLeft],o=[x[0].offsetTop,x[0].offsetLeft],a=[h.outerHeight(!1),h.outerWidth(!1)],i=[f.height(),f.width()];t[0].mcs={content:h,top:e[0],left:e[1],draggerTop:o[0],draggerLeft:o[1],topPct:Math.round(100*Math.abs(e[0])/(Math.abs(a[0])-i[0])),leftPct:Math.round(100*Math.abs(e[1])/(Math.abs(a[1])-i[1])),direction:n.dir}}var s=t.data(a),c=s.opt,d={trigger:"internal",dir:"y",scrollEasing:"mcsEaseOut",drag:!1,dur:c.scrollInertia,overwrite:"all",callbacks:!0,onStart:!0,onUpdate:!0,onComplete:!0},n=e.extend(d,n),u=[n.dur,n.drag?0:n.dur],f=e("#mCSB_"+s.idx),h=e("#mCSB_"+s.idx+"_container"),m=h.parent(),p=c.callbacks.onTotalScrollOffset?Y.call(t,c.callbacks.onTotalScrollOffset):[0,0],g=c.callbacks.onTotalScrollBackOffset?Y.call(t,c.callbacks.onTotalScrollBackOffset):[0,0];if(s.trigger=n.trigger,0===m.scrollTop()&&0===m.scrollLeft()||(e(".mCSB_"+s.idx+"_scrollbar").css("visibility","visible"),m.scrollTop(0).scrollLeft(0)),"_resetY"!==o||s.contentReset.y||(i("onOverflowYNone")&&c.callbacks.onOverflowYNone.call(t[0]),s.contentReset.y=1),"_resetX"!==o||s.contentReset.x||(i("onOverflowXNone")&&c.callbacks.onOverflowXNone.call(t[0]),s.contentReset.x=1),"_resetY"!==o&&"_resetX"!==o){if(!s.contentReset.y&&t[0].mcs||!s.overflowed[0]||(i("onOverflowY")&&c.callbacks.onOverflowY.call(t[0]),s.contentReset.x=null),!s.contentReset.x&&t[0].mcs||!s.overflowed[1]||(i("onOverflowX")&&c.callbacks.onOverflowX.call(t[0]),s.contentReset.x=null),c.snapAmount){var v=c.snapAmount instanceof Array?"x"===n.dir?c.snapAmount[1]:c.snapAmount[0]:c.snapAmount;o=V(o,v,c.snapOffset)}switch(n.dir){case"x":var x=e("#mCSB_"+s.idx+"_dragger_horizontal"),_="left",w=h[0].offsetLeft,S=[f.width()-h.outerWidth(!1),x.parent().width()-x.width()],b=[o,0===o?0:o/s.scrollRatio.x],y=p[1],B=g[1],T=y>0?y/s.scrollRatio.x:0,k=B>0?B/s.scrollRatio.x:0;break;case"y":var x=e("#mCSB_"+s.idx+"_dragger_vertical"),_="top",w=h[0].offsetTop,S=[f.height()-h.outerHeight(!1),x.parent().height()-x.height()],b=[o,0===o?0:o/s.scrollRatio.y],y=p[0],B=g[0],T=y>0?y/s.scrollRatio.y:0,k=B>0?B/s.scrollRatio.y:0}b[1]<0||0===b[0]&&0===b[1]?b=[0,0]:b[1]>=S[1]?b=[S[0],S[1]]:b[0]=-b[0],t[0].mcs||(l(),i("onInit")&&c.callbacks.onInit.call(t[0])),clearTimeout(h[0].onCompleteTimeout),J(x[0],_,Math.round(b[1]),u[1],n.scrollEasing),!s.tweenRunning&&(0===w&&b[0]>=0||w===S[0]&&b[0]<=S[0])||J(h[0],_,Math.round(b[0]),u[0],n.scrollEasing,n.overwrite,{onStart:function(){n.callbacks&&n.onStart&&!s.tweenRunning&&(i("onScrollStart")&&(l(),c.callbacks.onScrollStart.call(t[0])),s.tweenRunning=!0,C(x),s.cbOffsets=r())},onUpdate:function(){n.callbacks&&n.onUpdate&&i("whileScrolling")&&(l(),c.callbacks.whileScrolling.call(t[0]))},onComplete:function(){if(n.callbacks&&n.onComplete){"yx"===c.axis&&clearTimeout(h[0].onCompleteTimeout);var e=h[0].idleTimer||0;h[0].onCompleteTimeout=setTimeout(function(){i("onScroll")&&(l(),c.callbacks.onScroll.call(t[0])),i("onTotalScroll")&&b[1]>=S[1]-T&&s.cbOffsets[0]&&(l(),c.callbacks.onTotalScroll.call(t[0])),i("onTotalScrollBack")&&b[1]<=k&&s.cbOffsets[1]&&(l(),c.callbacks.onTotalScrollBack.call(t[0])),s.tweenRunning=!1,h[0].idleTimer=0,C(x,"hide")},e)}}})}},J=function(e,t,o,a,n,i,r){function l(){S.stop||(x||m.call(),x=K()-v,s(),x>=S.time&&(S.time=x>S.time?x+f-(x-S.time):x+f-1,S.time<x+1&&(S.time=x+1)),S.time<a?S.id=h(l):g.call())}function s(){a>0?(S.currVal=u(S.time,_,b,a,n),w[t]=Math.round(S.currVal)+"px"):w[t]=o+"px",p.call()}function c(){f=1e3/60,S.time=x+f,h=window.requestAnimationFrame?window.requestAnimationFrame:function(e){return s(),setTimeout(e,.01)},S.id=h(l)}function d(){null!=S.id&&(window.requestAnimationFrame?window.cancelAnimationFrame(S.id):clearTimeout(S.id),S.id=null)}function u(e,t,o,a,n){switch(n){case"linear":case"mcsLinear":return o*e/a+t;case"mcsLinearOut":return e/=a,e--,o*Math.sqrt(1-e*e)+t;case"easeInOutSmooth":return e/=a/2,1>e?o/2*e*e+t:(e--,-o/2*(e*(e-2)-1)+t);case"easeInOutStrong":return e/=a/2,1>e?o/2*Math.pow(2,10*(e-1))+t:(e--,o/2*(-Math.pow(2,-10*e)+2)+t);case"easeInOut":case"mcsEaseInOut":return e/=a/2,1>e?o/2*e*e*e+t:(e-=2,o/2*(e*e*e+2)+t);case"easeOutSmooth":return e/=a,e--,-o*(e*e*e*e-1)+t;case"easeOutStrong":return o*(-Math.pow(2,-10*e/a)+1)+t;case"easeOut":case"mcsEaseOut":default:var i=(e/=a)*e,r=i*e;return t+o*(.499999999999997*r*i+-2.5*i*i+5.5*r+-6.5*i+4*e)}}e._mTween||(e._mTween={top:{},left:{}});var f,h,r=r||{},m=r.onStart||function(){},p=r.onUpdate||function(){},g=r.onComplete||function(){},v=K(),x=0,_=e.offsetTop,w=e.style,S=e._mTween[t];"left"===t&&(_=e.offsetLeft);var b=o-_;S.stop=0,"none"!==i&&d(),c()},K=function(){return window.performance&&window.performance.now?window.performance.now():window.performance&&window.performance.webkitNow?window.performance.webkitNow():Date.now?Date.now():(new Date).getTime()},Z=function(){var e=this;e._mTween||(e._mTween={top:{},left:{}});for(var t=["top","left"],o=0;o<t.length;o++){var a=t[o];e._mTween[a].id&&(window.requestAnimationFrame?window.cancelAnimationFrame(e._mTween[a].id):clearTimeout(e._mTween[a].id),e._mTween[a].id=null,e._mTween[a].stop=1)}},$=function(e,t){try{delete e[t]}catch(o){e[t]=null}},ee=function(e){return!(e.which&&1!==e.which)},te=function(e){var t=e.originalEvent.pointerType;return!(t&&"touch"!==t&&2!==t)},oe=function(e){return!isNaN(parseFloat(e))&&isFinite(e)},ae=function(e){var t=e.parents(".mCSB_container");return[e.offset().top-t.offset().top,e.offset().left-t.offset().left]},ne=function(){function e(){var e=["webkit","moz","ms","o"];if("hidden"in document)return"hidden";for(var t=0;t<e.length;t++)if(e[t]+"Hidden"in document)return e[t]+"Hidden";return null}var t=e();return t?document[t]:!1};e.fn[o]=function(t){return u[t]?u[t].apply(this,Array.prototype.slice.call(arguments,1)):"object"!=typeof t&&t?void e.error("Method "+t+" does not exist"):u.init.apply(this,arguments)},e[o]=function(t){return u[t]?u[t].apply(this,Array.prototype.slice.call(arguments,1)):"object"!=typeof t&&t?void e.error("Method "+t+" does not exist"):u.init.apply(this,arguments)},e[o].defaults=i,window[o]=!0,e(window).bind("load",function(){e(n)[o](),e.extend(e.expr[":"],{mcsInView:e.expr[":"].mcsInView||function(t){var o,a,n=e(t),i=n.parents(".mCSB_container");if(i.length)return o=i.parent(),a=[i[0].offsetTop,i[0].offsetLeft],a[0]+ae(n)[0]>=0&&a[0]+ae(n)[0]<o.height()-n.outerHeight(!1)&&a[1]+ae(n)[1]>=0&&a[1]+ae(n)[1]<o.width()-n.outerWidth(!1)},mcsInSight:e.expr[":"].mcsInSight||function(t,o,a){var n,i,r,l,s=e(t),c=s.parents(".mCSB_container"),d="exact"===a[3]?[[1,0],[1,0]]:[[.9,.1],[.6,.4]];if(c.length)return n=[s.outerHeight(!1),s.outerWidth(!1)],r=[c[0].offsetTop+ae(s)[0],c[0].offsetLeft+ae(s)[1]],i=[c.parent()[0].offsetHeight,c.parent()[0].offsetWidth],l=[n[0]<i[0]?d[0]:d[1],n[1]<i[1]?d[0]:d[1]],r[0]-i[0]*l[0][0]<0&&r[0]+n[0]-i[0]*l[0][1]>=0&&r[1]-i[1]*l[1][0]<0&&r[1]+n[1]-i[1]*l[1][1]>=0},mcsOverflow:e.expr[":"].mcsOverflow||function(t){var o=e(t).data(a);if(o)return o.overflowed[0]||o.overflowed[1]}})})})});
 !function(t){"function"==typeof define&&define.amd?define(["jquery"],t):"object"==typeof module&&module.exports?module.exports=t(require("jquery")):t(jQuery)}(function(t){var e=function(){function e(){var e=this,n=function(){var n=["br-wrapper"];""!==e.options.theme&&n.push("br-theme-"+e.options.theme),e.$elem.wrap(t("<div />",{"class":n.join(" ")}))},i=function(){e.$elem.unwrap()},a=function(n){return t.isNumeric(n)&&(n=Math.floor(n)),t('option[value="'+n+'"]',e.$elem)},r=function(){var n=e.options.initialRating;return n?a(n):t("option:selected",e.$elem)},o=function(){var n=e.$elem.find('option[value="'+e.options.emptyValue+'"]');return!n.length&&e.options.allowEmpty?(n=t("<option />",{value:e.options.emptyValue}),n.prependTo(e.$elem)):n},l=function(t){var n=e.$elem.data("barrating");return"undefined"!=typeof t?n[t]:n},s=function(t,n){null!==n&&"object"==typeof n?e.$elem.data("barrating",n):e.$elem.data("barrating")[t]=n},u=function(){var t=r(),n=o(),i=t.val(),a=t.data("html")?t.data("html"):t.text(),l=null!==e.options.allowEmpty?e.options.allowEmpty:!!n.length,u=n.length?n.val():null,d=n.length?n.text():null;s(null,{userOptions:e.options,ratingValue:i,ratingText:a,originalRatingValue:i,originalRatingText:a,allowEmpty:l,emptyRatingValue:u,emptyRatingText:d,readOnly:e.options.readonly,ratingMade:!1})},d=function(){e.$elem.removeData("barrating")},c=function(){return l("ratingText")},f=function(){return l("ratingValue")},g=function(){var n=t("<div />",{"class":"br-widget"});return e.$elem.find("option").each(function(){var i,a,r,o;i=t(this).val(),i!==l("emptyRatingValue")&&(a=t(this).text(),r=t(this).data("html"),r&&(a=r),o=t("<a />",{href:"#","data-rating-value":i,"data-rating-text":a,html:e.options.showValues?a:""}),n.append(o))}),e.options.showSelectedRating&&n.append(t("<div />",{text:"","class":"br-current-rating"})),e.options.reverse&&n.addClass("br-reverse"),e.options.readonly&&n.addClass("br-readonly"),n},p=function(){return l("userOptions").reverse?"nextAll":"prevAll"},h=function(t){a(t).prop("selected",!0),e.$elem.change()},m=function(){t("option",e.$elem).prop("selected",function(){return this.defaultSelected}),e.$elem.change()},v=function(t){t=t?t:c(),t==l("emptyRatingText")&&(t=""),e.options.showSelectedRating&&e.$elem.parent().find(".br-current-rating").text(t)},y=function(t){return Math.round(Math.floor(10*t)/10%1*100)},b=function(){e.$widget.find("a").removeClass(function(t,e){return(e.match(/(^|\s)br-\S+/g)||[]).join(" ")})},w=function(){var n,i,a=e.$widget.find('a[data-rating-value="'+f()+'"]'),r=l("userOptions").initialRating,o=t.isNumeric(f())?f():0,s=y(r);if(b(),a.addClass("br-selected br-current")[p()]().addClass("br-selected"),!l("ratingMade")&&t.isNumeric(r)){if(o>=r||!s)return;n=e.$widget.find("a"),i=a.length?a[l("userOptions").reverse?"prev":"next"]():n[l("userOptions").reverse?"last":"first"](),i.addClass("br-fractional"),i.addClass("br-fractional-"+s)}},$=function(t){return l("allowEmpty")&&l("userOptions").deselectable?f()==t.attr("data-rating-value"):!1},x=function(n){n.on("click.barrating",function(n){var i,a,r=t(this),o=l("userOptions");return n.preventDefault(),i=r.attr("data-rating-value"),a=r.attr("data-rating-text"),$(r)&&(i=l("emptyRatingValue"),a=l("emptyRatingText")),s("ratingValue",i),s("ratingText",a),s("ratingMade",!0),h(i),v(a),w(),o.onSelect.call(e,f(),c(),n),!1})},R=function(e){e.on("mouseenter.barrating",function(){var e=t(this);b(),e.addClass("br-active")[p()]().addClass("br-active"),v(e.attr("data-rating-text"))})},V=function(t){e.$widget.on("mouseleave.barrating blur.barrating",function(){v(),w()})},O=function(e){e.on("touchstart.barrating",function(e){e.preventDefault(),e.stopPropagation(),t(this).click()})},C=function(t){t.on("click.barrating",function(t){t.preventDefault()})},S=function(t){x(t),e.options.hoverState&&(R(t),V(t))},T=function(t){t.off(".barrating")},j=function(t){var n=e.$widget.find("a");O&&O(n),t?(T(n),C(n)):S(n)};this.show=function(){l()||(n(),u(),e.$widget=g(),e.$widget.insertAfter(e.$elem),w(),v(),j(e.options.readonly),e.$elem.hide())},this.readonly=function(t){"boolean"==typeof t&&l("readOnly")!=t&&(j(t),s("readOnly",t),e.$widget.toggleClass("br-readonly"))},this.set=function(t){var n=l("userOptions");e.$elem.find('option[value="'+t+'"]').val()&&(s("ratingValue",t),s("ratingText",e.$elem.find('option[value="'+t+'"]').text()),s("ratingMade",!0),h(f()),v(c()),w(),n.silent||n.onSelect.call(this,f(),c()))},this.clear=function(){var t=l("userOptions");s("ratingValue",l("originalRatingValue")),s("ratingText",l("originalRatingText")),s("ratingMade",!1),m(),v(c()),w(),t.onClear.call(this,f(),c())},this.destroy=function(){var t=f(),n=c(),a=l("userOptions");T(e.$widget.find("a")),e.$widget.remove(),d(),i(),e.$elem.show(),a.onDestroy.call(this,t,n)}}return e.prototype.init=function(e,n){return this.$elem=t(n),this.options=t.extend({},t.fn.barrating.defaults,e),this.options},e}();t.fn.barrating=function(n,i){return this.each(function(){var a=new e;if(t(this).is("select")||t.error("Sorry, this plugin only works with select fields."),a.hasOwnProperty(n)){if(a.init(i,this),"show"===n)return a.show(i);if(a.$elem.data("barrating"))return a.$widget=t(this).next(".br-widget"),a[n](i)}else{if("object"==typeof n||!n)return i=n,a.init(i,this),a.show();t.error("Method "+n+" does not exist on jQuery.barrating")}})},t.fn.barrating.defaults={theme:"",initialRating:null,allowEmpty:null,emptyValue:"",showValues:!1,showSelectedRating:!0,deselectable:!0,reverse:!1,readonly:!1,fastClicks:!0,hoverState:!0,silent:!1,onSelect:function(t,e,n){},onClear:function(t,e){},onDestroy:function(t,e){}},t.fn.barrating.BarRating=e});
 //# sourceMappingURL=jquery.barrating.min.js.map
+/*! UIkit 2.27.2 | http://www.getuikit.com | (c) 2014 YOOtheme | MIT License */
+(function(addon) {
+
+    var component;
+
+    if (window.UIkit) {
+        component = addon(UIkit);
+    }
+
+    if (typeof define == 'function' && define.amd) {
+        define('uikit-grid', ['uikit'], function(){
+            return component || addon(UIkit);
+        });
+    }
+
+})(function(UI){
+
+    "use strict";
+
+    UI.component('grid', {
+
+        defaults: {
+            colwidth  : 'auto',
+            animation : true,
+            duration  : 300,
+            gutter    : 0,
+            controls  : false,
+            filter    : false,
+            origin    : UI.langdirection
+        },
+
+        boot:  function() {
+
+            // init code
+            UI.ready(function(context) {
+
+                UI.$('[data-uk-grid]', context).each(function(){
+
+                    var ele = UI.$(this);
+
+                    if(!ele.data('grid')) {
+                        UI.grid(ele, UI.Utils.options(ele.attr('data-uk-grid')));
+                    }
+                });
+            });
+        },
+
+        init: function() {
+
+            var $this = this, gutter = String(this.options.gutter).trim().split(' ');
+
+            this.gutterv  = parseInt(gutter[0], 10);
+            this.gutterh  = parseInt((gutter[1] || gutter[0]), 10);
+
+            // make sure parent element has the right position property
+            this.element.css({'position': 'relative'});
+
+            this.controls = null;
+            this.origin   = this.options.origin;
+
+            if (this.options.controls) {
+
+                this.controls = UI.$(this.options.controls);
+
+                // filter
+                this.controls.on('click', '[data-uk-filter]', function(e){
+                    e.preventDefault();
+                    $this.filter(UI.$(this).attr('data-uk-filter'));
+                });
+
+                // sort
+                this.controls.on('click', '[data-uk-sort]', function(e){
+                    e.preventDefault();
+                    var cmd = UI.$(this).attr('data-uk-sort').split(':');
+                    $this.sort(cmd[0], cmd[1]);
+                });
+            }
+
+            UI.$win.on('load resize orientationchange', UI.Utils.debounce(function(){
+
+                if ($this.currentfilter) {
+                    $this.filter($this.currentfilter);
+                } else {
+                    this.update();
+                }
+
+            }.bind(this), 100));
+
+            this.on('display.uk.check', function(){
+                if ($this.element.is(':visible'))  $this.update();
+            });
+
+            UI.domObserve(this.element, function(e) {
+                $this.update();
+            });
+
+            if (this.options.filter !== false) {
+                this.filter(this.options.filter);
+            } else {
+                this.update();
+            }
+        },
+
+        _prepareElements: function() {
+
+            var children = this.element.children(':not([data-grid-prepared])'), css;
+
+            // exit if no already prepared elements found
+            if (!children.length) {
+                return;
+            }
+
+            css = {
+                position  : 'absolute',
+                boxSizing : 'border-box',
+                width     : this.options.colwidth == 'auto' ? '' : this.options.colwidth
+            };
+
+            if (this.options.gutter) {
+
+                css['padding-'+this.origin] = this.gutterh;
+                css['padding-bottom'] = this.gutterv;
+
+                this.element.css('margin-'+this.origin, this.gutterh * -1);
+            }
+
+            children.attr('data-grid-prepared', 'true').css(css);
+        },
+
+        update: function(elements) {
+
+            var $this = this;
+
+            this._prepareElements();
+
+            elements = elements || this.element.children(':visible');
+
+            var children  = elements,
+                maxwidth  = this.element.width() + (2*this.gutterh) + 2,
+                left      = 0,
+                top       = 0,
+                positions = [],
+
+                item, width, height, pos, posi, i, z, max, size;
+
+            this.trigger('beforeupdate.uk.grid', [children]);
+
+            children.each(function(index){
+
+                size   = getElementSize(this);
+
+                item   = UI.$(this);
+                width  = size.outerWidth;
+                height = size.outerHeight;
+                left   = 0;
+                top    = 0;
+
+                for (i=0,max=positions.length;i<max;i++) {
+
+                    pos = positions[i];
+
+                    if (left <= pos.aX) { left = pos.aX; }
+                    if (maxwidth < (left + width)) { left = 0; }
+                    if (top <= pos.aY) { top = pos.aY; }
+                }
+
+                posi = {
+                    ele    : item,
+                    top    : top,
+                    width  : width,
+                    height : height,
+                    aY     : (top  + height),
+                    aX     : (left + width)
+                };
+
+                posi[$this.origin] = left;
+
+                positions.push(posi);
+            });
+
+            var posPrev, maxHeight = 0, positionto;
+
+            // fix top
+            for (i=0,max=positions.length;i<max;i++) {
+
+                pos = positions[i];
+                top = 0;
+
+                for (z=0;z<i;z++) {
+
+                    posPrev = positions[z];
+
+                    // (posPrev.left + 1) fixex 1px bug when using % based widths
+                    if (pos[this.origin] < posPrev.aX && (posPrev[this.origin] +1) < pos.aX) {
+                        top = posPrev.aY;
+                    }
+                }
+
+                pos.top = top;
+                pos.aY  = top + pos.height;
+
+                maxHeight = Math.max(maxHeight, pos.aY);
+            }
+
+            maxHeight = maxHeight - this.gutterv;
+
+            if (this.options.animation) {
+
+                this.element.stop().animate({'height': maxHeight}, 100);
+
+                positions.forEach(function(pos){
+
+                    positionto = {"top": pos.top, opacity: 1};
+                    positionto[$this.origin] = pos[$this.origin];
+
+                    pos.ele.stop().animate(positionto, this.options.duration);
+                }.bind(this));
+
+            } else {
+
+                this.element.css('height', maxHeight);
+
+                positions.forEach(function(pos){
+                    positionto = {"top": pos.top, opacity: 1};
+                    positionto[$this.origin] = pos[$this.origin];
+                    pos.ele.css(positionto);
+                }.bind(this));
+            }
+
+            // make sure to trigger possible scrollpies etc.
+            setTimeout(function() {
+                UI.$doc.trigger('scrolling.uk.document');
+            }, 2 * this.options.duration * (this.options.animation ? 1:0));
+
+            this.trigger('afterupdate.uk.grid', [children]);
+        },
+
+        filter: function(filter) {
+
+            this.currentfilter = filter;
+
+            filter = filter || [];
+
+            if (typeof(filter) === 'number') {
+                filter = filter.toString();
+            }
+
+            if (typeof(filter) === 'string') {
+                filter = filter.split(/,/).map(function(item){ return item.trim(); });
+            }
+
+            var $this = this, children = this.element.children(), elements = {"visible": [], "hidden": []}, visible, hidden;
+
+            children.each(function(index){
+
+                var ele = UI.$(this), f = ele.attr('data-uk-filter'), infilter = filter.length ? false : true;
+
+                if (f) {
+
+                    f = f.split(/,/).map(function(item){ return item.trim(); });
+
+                    filter.forEach(function(item){
+                        if (f.indexOf(item) > -1) infilter = true;
+                    });
+                }
+
+                elements[infilter ? "visible":"hidden"].push(ele);
+            });
+
+            // convert to jQuery collections
+            elements.hidden  = UI.$(elements.hidden).map(function () {return this[0];});
+            elements.visible = UI.$(elements.visible).map(function () {return this[0];});
+
+            elements.hidden.attr('aria-hidden', 'true').filter(':visible').fadeOut(this.options.duration);
+            elements.visible.attr('aria-hidden', 'false').filter(':hidden').css('opacity', 0).show();
+
+            $this.update(elements.visible);
+
+            if (this.controls && this.controls.length) {
+                this.controls.find('[data-uk-filter]').removeClass('uk-active').filter('[data-uk-filter="'+filter+'"]').addClass('uk-active');
+            }
+        },
+
+        sort: function(by, order){
+
+            order = order || 1;
+
+            // covert from string (asc|desc) to number
+            if (typeof(order) === 'string') {
+                order = order.toLowerCase() == 'desc' ? -1 : 1;
+            }
+
+            var elements = this.element.children();
+
+            elements.sort(function(a, b){
+
+                a = UI.$(a);
+                b = UI.$(b);
+
+                return (b.data(by) || '') < (a.data(by) || '') ? order : (order*-1);
+
+            }).appendTo(this.element);
+
+            this.update(elements.filter(':visible'));
+
+            if (this.controls && this.controls.length) {
+                this.controls.find('[data-uk-sort]').removeClass('uk-active').filter('[data-uk-sort="'+by+':'+(order == -1 ? 'desc':'asc')+'"]').addClass('uk-active');
+            }
+        }
+    });
+
+
+    /*!
+    * getSize v1.2.2
+    * measure size of elements
+    * MIT license
+    * https://github.com/desandro/get-size
+    */
+    function _getSize() {
+
+        var prefixes = 'Webkit Moz ms Ms O'.split(' ');
+        var docElemStyle = document.documentElement.style;
+
+        function getStyleProperty( propName ) {
+            if ( !propName ) {
+                return;
+            }
+
+            // test standard property first
+            if ( typeof docElemStyle[ propName ] === 'string' ) {
+                return propName;
+            }
+
+            // capitalize
+            propName = propName.charAt(0).toUpperCase() + propName.slice(1);
+
+            // test vendor specific properties
+            var prefixed;
+            for ( var i=0, len = prefixes.length; i < len; i++ ) {
+                prefixed = prefixes[i] + propName;
+                if ( typeof docElemStyle[ prefixed ] === 'string' ) {
+                    return prefixed;
+                }
+            }
+        }
+
+        // -------------------------- helpers -------------------------- //
+
+        // get a number from a string, not a percentage
+        function getStyleSize( value ) {
+            var num = parseFloat( value );
+            // not a percent like '100%', and a number
+            var isValid = value.indexOf('%') === -1 && !isNaN( num );
+            return isValid && num;
+        }
+
+        function noop() {}
+
+        var logError = typeof console === 'undefined' ? noop : function( message ) {
+            console.error( message );
+        };
+
+        // -------------------------- measurements -------------------------- //
+
+        var measurements = [
+            'paddingLeft',
+            'paddingRight',
+            'paddingTop',
+            'paddingBottom',
+            'marginLeft',
+            'marginRight',
+            'marginTop',
+            'marginBottom',
+            'borderLeftWidth',
+            'borderRightWidth',
+            'borderTopWidth',
+            'borderBottomWidth'
+        ];
+
+        function getZeroSize() {
+            var size = {
+                width: 0,
+                height: 0,
+                innerWidth: 0,
+                innerHeight: 0,
+                outerWidth: 0,
+                outerHeight: 0
+            };
+            for ( var i=0, len = measurements.length; i < len; i++ ) {
+                var measurement = measurements[i];
+                size[ measurement ] = 0;
+            }
+            return size;
+        }
+
+
+        // -------------------------- setup -------------------------- //
+
+        var isSetup = false;
+        var getStyle, boxSizingProp, isBoxSizeOuter;
+
+        /**
+        * setup vars and functions
+        * do it on initial getSize(), rather than on script load
+        * For Firefox bug https://bugzilla.mozilla.org/show_bug.cgi?id=548397
+        */
+        function setup() {
+            // setup once
+            if ( isSetup ) {
+                return;
+            }
+            isSetup = true;
+
+            var getComputedStyle = window.getComputedStyle;
+            getStyle = ( function() {
+                var getStyleFn = getComputedStyle ?
+                function( elem ) {
+                    return getComputedStyle( elem, null );
+                } :
+                function( elem ) {
+                    return elem.currentStyle;
+                };
+
+                return function getStyle( elem ) {
+                    var style = getStyleFn( elem );
+                    if ( !style ) {
+                        logError( 'Style returned ' + style +
+                        '. Are you running this code in a hidden iframe on Firefox? ' +
+                        'See http://bit.ly/getsizebug1' );
+                    }
+                    return style;
+                };
+            })();
+
+            // -------------------------- box sizing -------------------------- //
+
+            boxSizingProp = getStyleProperty('boxSizing');
+
+            /**
+            * WebKit measures the outer-width on style.width on border-box elems
+            * IE & Firefox measures the inner-width
+            */
+            if ( boxSizingProp ) {
+                var div = document.createElement('div');
+                div.style.width = '200px';
+                div.style.padding = '1px 2px 3px 4px';
+                div.style.borderStyle = 'solid';
+                div.style.borderWidth = '1px 2px 3px 4px';
+                div.style[ boxSizingProp ] = 'border-box';
+
+                var body = document.body || document.documentElement;
+                body.appendChild( div );
+                var style = getStyle( div );
+
+                isBoxSizeOuter = getStyleSize( style.width ) === 200;
+                body.removeChild( div );
+            }
+
+        }
+
+        // -------------------------- getSize -------------------------- //
+
+        function getSize( elem ) {
+            setup();
+
+            // use querySeletor if elem is string
+            if ( typeof elem === 'string' ) {
+                elem = document.querySelector( elem );
+            }
+
+            // do not proceed on non-objects
+            if ( !elem || typeof elem !== 'object' || !elem.nodeType ) {
+                return;
+            }
+
+            var style = getStyle( elem );
+
+            // if hidden, everything is 0
+            if ( style.display === 'none' ) {
+                return getZeroSize();
+            }
+
+            var size = {};
+            size.width = elem.offsetWidth;
+            size.height = elem.offsetHeight;
+
+            var isBorderBox = size.isBorderBox = !!( boxSizingProp &&
+                style[ boxSizingProp ] && style[ boxSizingProp ] === 'border-box' );
+
+            // get all measurements
+            for ( var i=0, len = measurements.length; i < len; i++ ) {
+                var measurement = measurements[i];
+                var value = style[ measurement ];
+
+                var num = parseFloat( value );
+                // any 'auto', 'medium' value will be 0
+                size[ measurement ] = !isNaN( num ) ? num : 0;
+            }
+
+            var paddingWidth = size.paddingLeft + size.paddingRight;
+            var paddingHeight = size.paddingTop + size.paddingBottom;
+            var marginWidth = size.marginLeft + size.marginRight;
+            var marginHeight = size.marginTop + size.marginBottom;
+            var borderWidth = size.borderLeftWidth + size.borderRightWidth;
+            var borderHeight = size.borderTopWidth + size.borderBottomWidth;
+
+            var isBorderBoxSizeOuter = isBorderBox && isBoxSizeOuter;
+
+            // overwrite width and height if we can get it from style
+            var styleWidth = getStyleSize( style.width );
+            if ( styleWidth !== false ) {
+                size.width = styleWidth +
+                // add padding and border unless it's already including it
+                ( isBorderBoxSizeOuter ? 0 : paddingWidth + borderWidth );
+            }
+
+            var styleHeight = getStyleSize( style.height );
+            if ( styleHeight !== false ) {
+                size.height = styleHeight +
+                // add padding and border unless it's already including it
+                ( isBorderBoxSizeOuter ? 0 : paddingHeight + borderHeight );
+            }
+
+            size.innerWidth = size.width - ( paddingWidth + borderWidth );
+            size.innerHeight = size.height - ( paddingHeight + borderHeight );
+
+            size.outerWidth = size.width + marginWidth;
+            size.outerHeight = size.height + marginHeight;
+
+            return size;
+        }
+
+        return getSize;
+
+    }
+
+    function getElementSize(ele) {
+        return _getSize()(ele);
+    }
+});

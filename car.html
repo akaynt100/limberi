@@ -349,28 +349,37 @@
         </aside>
         <div class="main-content-wrap float_r clearfix_">
             <div class="car-slider-wrap lazy-slider">
-                <ul class="uk-slideshow clearfix_">
-                    <li class="car-slider-el">
-                        <img
-                                data-sizes="auto"
+                <div class="car-slider-preview">
+                    <img src="assets/images/car-slider.jpg" alt="" />
+                </div>
+                <div class="car-slider car-slider-init-position">
+                    <ul class="uk-slideshow clearfix_">
+                        <li class="car-slider-el">
+                            <img
+                                    data-sizes="auto"
 
-                                data-custom-srcset="assets/images/img360.jpg | 360, assets/images/img480.jpg | 480, assets/images/img900.jpg | 900"
+                                    data-custom-srcset="assets/images/img360.jpg | 360, assets/images/img480.jpg | 480, assets/images/img900.jpg | 900"
 
-                                class="car-slider-el__image lazyload" alt="" title="" />
-                    </li>
-                    <li class="car-slider-el">
-                        <img
-                                data-sizes="auto"
+                                    data-computed-height-set = '360 | 360, 480 | 480, 900 | 900'
 
-                                data-custom-srcset="assets/images/img360.jpg | 360, assets/images/img480.jpg | 480, assets/images/img900.jpg | 900"
+                                    class="car-slider-el__image lazyload" alt="" title="" />
+                        </li>
+                        <li class="car-slider-el">
+                            <img
+                                    data-sizes="auto"
 
-                                class="car-slider-el__image lazyload" alt="" title="" />
-                    </li>
-                </ul>
-                <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
-                    <li data-uk-slideshow-item="0"><a href=""></a></li>
-                    <li data-uk-slideshow-item="1"><a href=""></a></li>
-                </ul>
+                                    data-custom-srcset="assets/images/img360.jpg | 360, assets/images/img480.jpg | 480, assets/images/img900.jpg | 900"
+
+                                    data-computed-height-set = '360 | 360, 480 | 480, 900 | 900'
+
+                                    class="car-slider-el__image lazyload" alt="" title="" />
+                        </li>
+                    </ul>
+                    <ul class="uk-dotnav uk-dotnav-contrast uk-position-bottom uk-flex-center">
+                        <li data-uk-slideshow-item="0"><a href=""></a></li>
+                        <li data-uk-slideshow-item="1"><a href=""></a></li>
+                    </ul>
+                </div>
                 <div class="car-slider-price-and-back-btn clearfix_">
                     <a href="#" class="car-slider__back-btn float_l">
                         <i class="fa fa-angle-left" aria-hidden="true"></i>

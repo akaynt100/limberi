@@ -12,26 +12,10 @@ $(document).ready(function(){
         e.stopPropagation();
     });
 
-    $(".aside-nav-el-with-submenu>.aside-nav-el__link").click(function(e){
-        var el  = $(this).parent();
-        el.find(".aside-nav-el-submenu").toggleClass("aside-nav-el-submenu-opened");
-        el.find(".auto-drop-arrow").toggleClass("auto-drop-arrow_rotate");
-        e.preventDefault();
-    });
-
-    /*$(".widget-action-auto-slider:not(.widget-action-auto-slider-dynamic)").bxSlider({
-        onSliderLoad: function(){
-            $(".widget-slider").css("visibility", "visible");
-        }
-    });*/
+    asideCustomScroll();
 
     var actionAutoWidget = new ActionAutoWidget().init();
 
-    /*$(".widget-reviews-slider").bxSlider({
-        onSliderLoad: function(){
-            $(".widget-slider").css("visibility", "visible");
-        }
-    });*/
     var ratings = new RatingWidget().init();
 
     $(".widget-reviews").each(function(i){
@@ -44,11 +28,6 @@ $(document).ready(function(){
         });
     });
 
-    /*$(".widget-excursion-slider").bxSlider({
-        onSliderLoad: function(){
-            $(".widget-slider").css("visibility", "visible");
-        }
-    });*/
 
     $(".widget-lg .widget-tabs-wrap").tabs();
     $(".main-content>.widget-tabs-wrap").tabs();
@@ -231,6 +210,45 @@ $(window).load(function(){
 });
 
 $(window).resize(resizeGrid);
+
+function asideCustomScroll(){
+    var btns = $(".aside-nav-el-with-submenu>.aside-nav-el__link");
+
+    btns.each(function () {
+        var btn = $(this),
+            el = btn.parent();
+
+        btn.click(function (e) {
+            e.preventDefault();
+            if(el.find(".aside-nav-el-submenu").hasClass('excursion-list')){
+                if(el.find(".excursion-list").hasClass('aside-nav-custom-scroll-ex')){
+                    el.find(".excursion-list").css('overflow','hidden').mCustomScrollbar("destroy");
+                }else{
+                    el.find(".excursion-list").mCustomScrollbar({
+                        theme:"minimal-dark"
+                    });
+                }
+                btnsClickHandler(el, excursionToggleClasses);
+            }else{
+                btnsClickHandler(el, carsToggleClasses);
+            }
+        });
+    });
+
+
+    function excursionToggleClasses(el){
+        el.find(".aside-nav-el-submenu").toggleClass('aside-nav-custom-scroll-ex').toggleClass('aside-nav-el-submenu-opened-state');
+    }
+
+    function btnsClickHandler(el,toggleClasses){
+        toggleClasses(el);
+        el.find(".auto-drop-arrow").toggleClass("auto-drop-arrow_rotate");
+    }
+
+    function carsToggleClasses(el){
+        el.find(".aside-nav-el-submenu").toggleClass("aside-nav-el-submenu-opened");
+    }
+}
 
 function fixTableHead(){
     var tableWidget = $('.widget-routes'),
